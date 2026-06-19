@@ -4,7 +4,7 @@ Hands-on network documentation lab using command-line tools to map, analyse, and
 
 ---
 
-## How My Network Gets Configured (In My Own Words)
+## How My Network Gets Configured 
 
 When I connect a new device to my network, my PC sends a broadcast asking if any device can assign it an IP address. My router, acting as the DHCP server, responds with an IP address, subnet mask, default gateway, and DNS server information. This gives my device a full identity on the network — its own address, the boundary of its local network, the exit point to reach the internet, and the means to resolve domain names. I verified this using `ipconfig /all`, which displayed all four values.
 
@@ -118,8 +118,6 @@ Hop 17 — 34ms   — google.com destination reached
 ---
 
 ## Practical Troubleshooting Framework
-
-Built from reasoning through how DHCP, DNS, and routing actually work — this is the order I'd check things if a device "can't connect to the internet":
 
 1. **Physical layer** — Is the cable connected? Is WiFi turned on? Are the router's lights normal? Most "internet is down" tickets are solved here.
 2. **IP check** — Run `ipconfig`. A real `192.168.x.x` address means DHCP succeeded. A `169.254.x.x` address means the broadcast for an IP never got a response — points to a physical or router problem, not a settings issue.
